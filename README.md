@@ -82,6 +82,20 @@ class Post extends Model
 }
 ```
 
+Explicit parsing of meta types
+
+```php
+class Post extends Model
+{
+    use Metable;
+    
+    protected $metaCasts = [
+        'fooBool' => BooleanHandler::class,
+        'fooString' => StringHandler::class,
+    ];
+}
+```
+
 ## Documentation
 
 The full documentation is available on [ReadTheDocs](http://laravel-metable.readthedocs.io/en/latest/).
